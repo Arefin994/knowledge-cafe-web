@@ -1,13 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header/Header.js';
+import { useEffect, useState } from 'react';
+import Blogs from './components/Blogs/Blogs.js';
+import Bookmark from './components/Bookmark/Bookmark';
 
 
 
 
 function App() {
+  // const [blogs, setBlogs] = useState([]);
+  // useEffect(() => {
+  //   fetch('data.json')
+  //   .then(res => res.json())
+  //   .then(blogs => console.log(blogs))
+  // },[])
+
   return (
     <div className="App">
-      <h1>Hello Form App.js</h1>
+      <Header></Header>
+      <div className='layout'>
+        <Blogs></Blogs>
+        <Bookmark></Bookmark>
+      </div>
     </div>
   );
 }
