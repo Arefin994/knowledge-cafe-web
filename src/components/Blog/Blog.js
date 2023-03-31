@@ -2,13 +2,11 @@ import React from 'react';
 import './Blog.css'
 
 const Blog = (props) => {
-  const handleClick = () => {
-    let markAsRead=document.getElementById(`markAsRead`)
-    markAsRead.innerText = (parseInt(markAsRead.innerText)+parseInt(props.timeToRead))
-    console.log(markAsRead.innerText);
-  };
+  
+  const handleClick = props.handleClick;
 
   return (
+    
     <div className='py-3'>
       <img className='blog-img rounded' src={props.img} alt='' />
       <div className='p-3'>
@@ -26,7 +24,7 @@ const Blog = (props) => {
             <div className='d-flex '>
               <h6 className='p-4 my-auto'>{props.timeToRead} min read</h6>
               <h6 className='my-auto'>Bookmark</h6>
-              <button className='bookmark-btn'>
+              <button className='bookmark-btn' onClick={() => handleClick(props)}>
                 <i className='fa-regular fa-bookmark fa-beat'></i>
               </button>
             </div>
@@ -35,7 +33,7 @@ const Blog = (props) => {
         <div>
           <h3>{props.title}</h3>
           <h5>{props.tags}</h5>
-          <button className='markAsRead-btn' onClick={() => handleClick()}>
+          <button className='markAsRead-btn' >
             Mark as read
           </button>
         </div>

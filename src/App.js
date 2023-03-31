@@ -19,9 +19,8 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-      <div className='layout'>
+      <div className=''>
         <Blogs></Blogs>
-        <Bookmark></Bookmark>
       </div>
     </div>
   );

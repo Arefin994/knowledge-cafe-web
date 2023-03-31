@@ -1,25 +1,34 @@
-import React, { useState } from 'react';
-import './Bookmark.css';
+// import React, { useState, useEffect } from 'react';
+// import './Bookmark.css';
 
-const Bookmark = (time) => {
-  const [readingTime, setReadingTime] = useState(177);
-  const [bookMarkCount, setBookMarkCount] = useState(0);
+// const Bookmark = () => {
+//   const [currentTime, setCurrentTime] = useState(localStorage.getItem('timeToRead'));
+  
+//   useEffect(() => {
+//     const handleStorageChange = () => {
+//       setCurrentTime(localStorage.getItem('timeToRead'));
+//     };
 
-  const handleRead = (time) => {
-    setReadingTime((prevTime) => prevTime + time);
-  };
+//     window.addEventListener('storage', handleStorageChange);
 
-  return (
-    <div>
-      <div className='book-mark my-2'>
-        Time Spent on reading: <span id='markAsRead'>{readingTime}</span>min
-      </div>
-      <div className='book-mark-count'>
-        <h6>Bookmarked Blog: {bookMarkCount}</h6>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      </div>
-    </div>
-  );
-};
+//     return () => {
+//       window.removeEventListener('storage', handleStorageChange);
+//     };
+//   }, []);
 
-export default Bookmark;
+//   let bookMarkCount = localStorage.getItem('bookmarkCount');
+  
+//   return (
+//     <div>
+//       <div className='book-mark my-2'>
+//         Time Spent on reading: <span id='markAsRead'>{currentTime}</span>min
+//       </div>
+//       <div className='book-mark-count'>
+//         <h6>Bookmarked Blog: {bookMarkCount}</h6>
+//         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Bookmark;

@@ -1,3 +1,20 @@
 .blogs{
     position: absolutes;
 }
+.book-mark {
+    position: sticky;
+    background-color: rgba(17, 17, 17, 0.05);
+    border-radius: 8px;
+    padding: 0px 10px;
+    color: #6047EC;
+}
+.book-mark-count {
+    position: sticky;
+    background-color: rgba(17, 17, 17, 0.05);
+    border-radius: 8px;
+    padding: 0px 10px;
+}
+.layout{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
