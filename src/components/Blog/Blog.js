@@ -4,6 +4,7 @@ import './Blog.css'
 const Blog = (props) => {
   
   const handleClick = props.handleClick;
+  const handleReadTime=props.handleReadTime;
 
   return (
     
@@ -33,7 +34,7 @@ const Blog = (props) => {
         <div>
           <h3>{props.title}</h3>
           <h5>{props.tags}</h5>
-          <button className='markAsRead-btn' >
+          <button className='markAsRead-btn' onClick={() => handleReadTime(props)} >
             Mark as read
           </button>
         </div>

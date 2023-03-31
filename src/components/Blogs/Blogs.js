@@ -4,6 +4,7 @@ import Blog from '../Blog/Blog';
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   const [bookmarks, setBookmarks] = useState([]);
+  const [totalReadTime, setTotalReadTime] = useState(0);
 
   useEffect(() => {
     fetch('data.json')
@@ -25,6 +26,10 @@ const Blogs = () => {
     localStorage.setItem('Bookmarks', JSON.stringify(bookmarks));
     setBookmarks(bookmarks);
   };
+
+  const handleReadTime = (time) => {
+    setTotalReadTime(parseInt(totalReadTime) + parseInt(time.timeToRead));
+  };
   
   return (
     <div className='layout'>
@@ -41,18 +46,19 @@ const Blogs = () => {
             timeToRead={blog.timeToRead}
             img={blog.img}
             handleClick={handleClick}
+            handleReadTime={handleReadTime}
           />
         ))}
       </div>
       <div>
         <div className='book-mark my-2'>
-          Time Spent on reading: <span id='markAsRead'>{0}</span>min
+          Time Spent on reading: <span id='markAsRead'>{totalReadTime}</span>min
         </div>
-        <div className='book-mark-count'>
-          <h6>Bookmarked Blog: {bookmarks.length}</h6>
+        <div className='book-mark-count py-2'>
+          <h6 className='py-3'>Bookmarked Blog: {bookmarks.length}</h6>
           <div>
             {bookmarks.map(bookmark => (
-              <p>{bookmark.title}</p>
+              <p className='bg-white p-2'>{bookmark.title}</p>
             ))}
           </div>
         </div>
