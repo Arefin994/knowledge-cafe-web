@@ -12,7 +12,7 @@ const Bookmark = (time) => {
   return (
     <div>
       <div className='book-mark my-2'>
-        Time Spent on reading: {readingTime} min
+        Time Spent on reading: <span id='markAsRead'>{readingTime}</span>min
       </div>
       <div className='book-mark-count'>
         <h6>Bookmarked Blog: {bookMarkCount}</h6>
