@@ -1,0 +1,11 @@
+.qna-btn{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin: 20px 0px;
+    background-color: chocolate;
+}
+.qna-btn:hover{
+    background-color: brown;
+}
